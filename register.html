@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Shopping Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2>Register</h2>
+             <form id="registerForm">
+    <input id="username" type="text" placeholder="Username" required>
+    <input id="email" type="email" placeholder="Email" required>
+    <input id="password" type="password" placeholder="Password" required>
+    <input id="confirmPassword" type="password" placeholder="Confirm Password" required>
+    <button type="submit">Register</button>
+</form>
+
+
+                    </div>
+    </main>
+    <footer>
+        <!-- Footer content -->
+    </footer>
+<script>
+    // Register Form Validation
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (!isValidUsername(username)) {
+            alert('Please enter a valid username');
+            event.preventDefault();
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            alert('Please enter a valid email address');
+            event.preventDefault();
+            return;
+        }
+
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters long');
+            event.preventDefault();
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match');
+            event.preventDefault();
+            return;
+        }
+    });
+
+    // Login Form Validation
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        const username = document.getElementById('loginUsername').value;
+        const password = document.getElementById('loginPassword').value;
+
+        if (!isValidUsername(username)) {
+            alert('Please enter a valid username');
+            event.preventDefault();
+            return;
+        }
+
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters long');
+            event.preventDefault();
+            return;
+        }
+    });
+
+    function isValidUsername(username) {
+        // Implement your validation logic for username (e.g., minimum length)
+        return username.length >= 3;
+    }
+
+    function isValidEmail(email) {
+        // Implement your validation logic for email (e.g., using regular expressions)
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+</script>
+
+</body>
+</html>
