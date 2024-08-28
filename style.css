@@ -1,0 +1,17 @@
+form{
+    margin:auto;
+    height:175px;
+    width:30%;
+  
+    justify-content:center;
+}
+form div{
+    margin:auto;
+    width:40%;
+}
+body{
+    background-image: "top.jpg";
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
